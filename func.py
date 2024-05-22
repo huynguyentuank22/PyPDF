@@ -38,11 +38,12 @@ def extract_images(pdf_path):
     reader = PdfReader(pdf_path)
     num_pages = len(reader.pages)
 
-    for i in range(num_pages):
-        page = reader.pages[i]
+    count = 0
+    for page in reader.pages:
         for img in page.images:
-            with open(r'output\images\img_' + str(i+1) + '.png', 'wb') as f:
+            with open(r'output\images\img_' + str(count) + '.png', 'wb') as f:
                 f.write(img.data)
+            count = count + 1
     f.close()
 
 def merge_pdfs(pdf_paths):
