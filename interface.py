@@ -19,6 +19,22 @@ def main():
     Label(root, text='Enter path of PDF:', font=('Arial', 12)).grid(row=2, column=0)
     Entry(root, width=80, textvariable=path).grid(row=2, column=1)
 
+    def select_file():
+        filetypes = (
+            ('text files', '*.pdf'),
+            ('All files', '*.*')
+        )
+
+        select_file = fd.askopenfilename(
+            title='Open a file',
+            initialdir='/',
+            filetypes=filetypes)
+        path.set(select_file)
+    
+    button_select = Frame(root)
+    Button(button_select, text="Select file", command=lambda: select_file()).pack(side=LEFT, padx=2)
+    button_select.grid(row=3, column=0)
+
     button_input = Frame(root)
     Button(button_input, text="Add", command=lambda: add(
         listbox, path)).pack(side=LEFT, padx=2)
