@@ -1,6 +1,6 @@
 from func import *
 from button import *
-
+# oke
 def main():
     root = Tk()
 
