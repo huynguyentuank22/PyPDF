@@ -2,6 +2,7 @@ from pypdf import PdfReader
 from pypdf import PdfWriter
 import os 
 
+
 def init():
     try:
         os.makedirs(r'output')

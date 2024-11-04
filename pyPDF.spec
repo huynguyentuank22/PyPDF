@@ -1,6 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 
+
 a = Analysis(
     ['pyPDF.py'],
     pathex=[],
